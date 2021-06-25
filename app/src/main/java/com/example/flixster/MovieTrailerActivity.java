@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+import com.example.flixster.databinding.ActivityMovieTrailerBinding;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 public class MovieTrailerActivity extends YouTubeBaseActivity {
-
+    YouTubePlayerView playerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,11 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         final String videoId = "tKodtNFpzBA";
 
         // resolve the player view from the layout
-        YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
+//        YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
+
+        ActivityMovieTrailerBinding binding = ActivityMovieTrailerBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         // initialize with API key stored in secrets.xml
         playerView.initialize("AIzaSyA_u3l_hYRJvbzsWZyEWo7m9plTrq68qS0", new YouTubePlayer.OnInitializedListener() {

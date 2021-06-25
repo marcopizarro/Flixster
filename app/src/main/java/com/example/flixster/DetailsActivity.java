@@ -5,21 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
-
-//import com.bumptech.glide.annotation.GlideModule;
-//import com.bumptech.glide.module.AppGlideModule;
-
 import com.bumptech.glide.Glide;
-
+import com.example.flixster.databinding.ActivityDetailsBinding;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
-
-//import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -28,27 +21,26 @@ public class DetailsActivity extends AppCompatActivity {
     ImageView ivDetailPoster;
     RatingBar rbDetailRating;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        ActivityDetailsBinding binding = ActivityDetailsBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
         Intent intent = getIntent();
 
-        tvDetailTitle = findViewById(R.id.tvDetailTitle);
-        tvDetailDescription = findViewById(R.id.tvDetailDescription);
-        ivDetailPoster = findViewById(R.id.ivDetailPoster);
-        rbDetailRating = findViewById(R.id.rbDetailRating);
         float rating = (float) intent.getDoubleExtra("rating", 0);
 
-        tvDetailTitle.setText(intent.getStringExtra("title"));
-        tvDetailDescription.setText(intent.getStringExtra("description"));
+        binding.tvDetailTitle.setText(intent.getStringExtra("title"));
+        binding.tvDetailDescription.setText(intent.getStringExtra("description"));
         Glide.with(this)
                 .load(intent.getStringExtra("poster"))
                 .placeholder(R.drawable.flicks_movie_placeholder)
                 .fitCenter()
                 .transform(new RoundedCornersTransformation(20, 0))
-                .into(ivDetailPoster);
-        rbDetailRating.setRating(rating);
+                .into(binding.ivDetailPoster);
+        binding.rbDetailRating.setRating(rating);
     }
 }
