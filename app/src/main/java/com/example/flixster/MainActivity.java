@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("description", movies.get(position).getOverview());
                 i.putExtra("poster", movies.get(position).getPosterPath());
                 i.putExtra("rating", movies.get(position).getRating() / 2);
+                i.putExtra("key", movies.get(position).getId());
                 Log.i("MainActivity", movies.get(position).getRating().toString());
                 MainActivity.this.startActivity(i);
             }
