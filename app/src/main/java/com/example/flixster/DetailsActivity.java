@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.flixster.databinding.ActivityDetailsBinding;
+
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 
@@ -23,6 +24,7 @@ public class DetailsActivity extends AppCompatActivity {
     ImageView ivDetailPoster;
     RatingBar rbDetailRating;
     Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

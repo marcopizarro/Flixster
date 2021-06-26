@@ -24,9 +24,9 @@ import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
-    public interface OnClickListener{
+    public interface OnClickListener {
         void onItemClicked(int position);
     }
 
@@ -40,6 +40,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         this.movies = movies;
         this.clickListener = clickListener;
     }
+
     //inflate layout from XML
     @NonNull
     @NotNull
@@ -57,7 +58,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         Movie movie = movies.get(position);
         //bind movie data to viewholder
         holder.bind(movie);
-        }
+    }
 
     //return number of items
     @Override
@@ -82,7 +83,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             binding.tvTitle.setText(movie.getTitle());
             binding.tvOverview.setText(movie.getOverview());
             String imageUrl;
-            if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 imageUrl = movie.getBackdropPath();
             } else {
                 imageUrl = movie.getPosterPath();

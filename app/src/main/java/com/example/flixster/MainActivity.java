@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         //set adapter on recycler view
         binding.rvMovies.setAdapter(movieAdapter);
         //set layout manager
-        binding.rvMovies.setLayoutManager(new LinearLayoutManager(this ));
+        binding.rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {

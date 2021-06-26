@@ -24,6 +24,7 @@ import okhttp3.Headers;
 public class MovieTrailerActivity extends YouTubeBaseActivity {
     YouTubePlayerView playerView;
     String key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                     JSONArray results = jsonObject.getJSONArray("results");
                     Log.i("Trailer", "videos: " + results.toString());
 
-                    for(int j = 0; j < results.length(); j++){
+                    for (int j = 0; j < results.length(); j++) {
                         JSONObject n = results.getJSONObject(j);
                         key = n.getString("key");
                     }
@@ -75,7 +76,6 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                 });
                 Log.d("Trailer", "success");
             }
-
             @Override
             public void onFailure(int i, Headers headers, String s, Throwable throwable) {
                 Log.d("Trailer", "fail");

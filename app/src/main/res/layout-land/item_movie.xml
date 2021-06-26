@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="3dp"
     android:layout_marginTop="5dp"
-    android:layout_marginLeft="3dp">
+    android:layout_marginBottom="5dp">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -27,6 +27,7 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
+        android:textColor="@color/white"
         tools:text="Luca" />
 
     <TextView
@@ -40,5 +41,6 @@
         android:layout_marginEnd="0dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="14sp"
+        android:textColor="@color/white"
         tools:text="Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface." />
 </RelativeLayout>

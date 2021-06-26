@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    tools:context=".DetailsActivity"
+    android:background="@color/black">
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/detailGroup"
@@ -36,7 +37,8 @@
         android:layout_marginEnd="10dp"
         android:layout_toEndOf="@+id/ivDetailPoster"
         android:isIndicator="true"
-        android:numStars="5" />
+        android:numStars="5"
+        android:progressTint="#ffff00" />
 
     <TextView
         android:id="@+id/tvDetailTitle"
@@ -47,7 +49,8 @@
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/ivDetailPoster"
         android:textSize="34sp"
-        tools:text="Luca" />
+        tools:text="Luca"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/tvDetailDescription"
@@ -59,5 +62,6 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="7dp"
+        android:textColor="@color/white"
         tools:text="Set in a beautiful seaside town on the Italian Riviera, the original animated feature is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides." />
 </RelativeLayout>
